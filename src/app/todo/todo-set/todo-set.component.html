@@ -1,3 +1,10 @@
-<p>
-  todo-set works!
-</p>
+<div class="todo-set">
+  <div class="set-header">
+      <span class="set-title">{{setTitle}}</span>
+    
+      <div *ngIf="setTitle == 'Things to do'" class="set-toggle-show-completed">
+        <mat-slide-toggle [checked]="showCompleted" (change)="onToggleCompleted($event)"></mat-slide-toggle>
+        <span class="show-completed-text">Show completed</span>
+      </div>
+    </div>
+</div>

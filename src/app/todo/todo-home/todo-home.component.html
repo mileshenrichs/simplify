@@ -1,3 +1,14 @@
-<p>
-  todo-home works!
-</p>
+<div class="todo-set-uncompleted">
+  <app-todo-set 
+    [setTitle]="'Things to do'" 
+    [todos]="getActiveTodos()"
+    [showCompleted]="showCompleted"
+    (completedToggled)="toggleShowCompleted()">
+  </app-todo-set>
+</div>
+
+<app-todo-set 
+  *ngIf="showCompleted"
+  [setTitle]="'Completed tasks'" 
+  [todos]="getCompletedTodos()">
+</app-todo-set>

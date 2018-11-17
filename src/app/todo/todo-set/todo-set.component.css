@@ -1,0 +1,25 @@
+.set-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.set-header span {
+  font-size: 14px;
+}
+
+.set-header .set-title {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.set-toggle-show-completed {
+  display: flex;
+  align-items: center;
+}
+
+.show-completed-text {
+  margin-left: 12px;
+  position: relative;
+  top: 1px;
+}
