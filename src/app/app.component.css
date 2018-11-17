@@ -1,0 +1,15 @@
+.app-container {
+  width: 960px;
+  padding: 0 20px;
+  margin: 30px auto 0 auto;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.app-logo {
+  text-align: center;
+}
+
+.app-logo img {
+  width: 300px;
+}
