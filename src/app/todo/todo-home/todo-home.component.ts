@@ -25,17 +25,22 @@ export class TodoHomeComponent implements OnInit {
         task: 'Check in on Juno\'s messed up leg',
         deadline: new Date(),
         completed: false
+      },
+      {
+        task: 'Wake up this morning',
+        deadline: new Date(),
+        completed: true;
       }
     ];
     this.showCompleted = false;
   }
 
   getActiveTodos(): Todo[] {
-    return this.todos;
+    return this.todos.filter(todo => !todo.completed);
   }
 
   getCompletedTodos(): Todo[] {
-    return this.todos;
+    return this.todos.filter(todo => todo.completed);
   }
 
   toggleShowCompleted(): void {

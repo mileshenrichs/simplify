@@ -1,10 +1,18 @@
 <div class="todo-set">
   <div class="set-header">
-      <span class="set-title">{{setTitle}}</span>
-    
-      <div *ngIf="setTitle == 'Things to do'" class="set-toggle-show-completed">
-        <mat-slide-toggle [checked]="showCompleted" (change)="onToggleCompleted($event)"></mat-slide-toggle>
-        <span class="show-completed-text">Show completed</span>
-      </div>
+    <span class="set-title">{{setTitle}}</span>
+  
+    <div *ngIf="setTitle == 'Things to do'" class="set-toggle-show-completed">
+      <mat-slide-toggle [checked]="showCompleted" (change)="onToggleCompleted($event)"></mat-slide-toggle>
+      <span class="show-completed-text">Show completed</span>
     </div>
+  </div>
+
+  <div class="set-contents">
+    <mat-selection-list #todosList>
+      <mat-list-option *ngFor="let todo of todos" checkboxPosition="before">
+        {{todo.task}}
+      </mat-list-option>
+    </mat-selection-list>        
+  </div>
 </div>

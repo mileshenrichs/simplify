@@ -17,7 +17,7 @@ export class TodoSetComponent implements OnInit {
   @Output() completedToggled = new EventEmitter();
 
   ngOnInit() {
-    console.log(this.setTitle);
+    
   }
 
   onToggleCompleted(event: Event): void {
