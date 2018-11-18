@@ -28,6 +28,11 @@ export class TodoSetComponent implements OnInit {
 
   onTodoClicked(event: Event): void {
     console.log(event);
+    // get info about action
+    // const task = event.target.childNodes[0].data.trim();
+    // console.log('toggling ' + task);
+
+
   }
 
   formatDateForTooltip(date: Date): string {

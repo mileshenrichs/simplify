@@ -19,17 +19,20 @@ export class TodoHomeComponent implements OnInit {
       {
         task: 'Become an Angular master',
         deadline: new Date(),
-        isCompleted: false
+        isCompleted: false,
+        inCompletedTransition: false
       },
       {
         task: 'Check in on Juno\'s messed up leg',
         deadline: new Date(),
-        isCompleted: false
+        isCompleted: false,
+        inCompletedTransition: false
       },
       {
         task: 'Wake up this morning',
         deadline: new Date(),
-        isCompleted: true
+        isCompleted: true,
+        inCompletedTransition: false
       }
     ];
     this.showCompleted = true;
