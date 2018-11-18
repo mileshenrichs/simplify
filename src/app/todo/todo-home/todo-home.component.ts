@@ -17,21 +17,27 @@ export class TodoHomeComponent implements OnInit {
   ngOnInit() {
     this.todos = [
       {
-        task: 'Become an Angular master',
-        deadline: new Date(),
+        task: 'Answer two questions on Astonomy Packback',
+        deadline: new Date(2018, 10, 18, 18, 30, 0, 0),
         isCompleted: false,
         inCompletedTransition: false
       },
       {
-        task: 'Check in on Juno\'s messed up leg',
-        deadline: new Date(),
+        task: 'Ask one question on Astonomy Packback',
+        deadline: new Date(2018, 10, 19, 14, 0, 0, 0),
         isCompleted: false,
         inCompletedTransition: false
       },
       {
         task: 'Wake up this morning',
-        deadline: new Date(),
+        deadline: new Date(2018, 10, 18, 8, 0, 0, 0),
         isCompleted: true,
+        inCompletedTransition: false
+      },
+      {
+        task: 'Complete the Coursera HackerRank',
+        deadline: new Date(2018, 10, 26, 0, 0, 0, 0),
+        isCompleted: false,
         inCompletedTransition: false
       }
     ];
@@ -48,6 +54,24 @@ export class TodoHomeComponent implements OnInit {
 
   toggleShowCompleted(): void {
     this.showCompleted = !this.showCompleted;
+  }
+
+  onTodoCompleted(todo: Todo): void {
+    const todoIndex = this.todos.indexOf(todo);
+    this.todos[todoIndex].inCompletedTransition = true;
+    this.initiateCompletionSequence(todoIndex);
+  }
+
+  initiateCompletionSequence(todoIndex: number) {
+    // wait for fade-out animation, then set todo as completed
+    const FADEOUT_ANIMATION_DURATION = 2900;
+    setTimeout(() => {
+      this.todos[todoIndex] = {
+        ...this.todos[todoIndex],
+        isCompleted: true,
+        inCompletedTransition: false
+      }
+    }, FADEOUT_ANIMATION_DURATION);
   }
 
 }

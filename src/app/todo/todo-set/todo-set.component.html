@@ -10,14 +10,20 @@
 
   <div class="set-contents">
     <mat-selection-list #todosList>
-      <mat-list-option *ngFor="let todo of todos" checkboxPosition="before" (click)="onTodoClicked($event)" [selected]="todo.isCompleted">
-        {{todo.task}}
-        <span class="task-deadline" 
-          [matTooltip]="formatDateForTooltip(todo.deadline)"
-          matTooltipPosition="above"
-          [matTooltipDisabled]="todo.isCompleted">
-            {{formatDateForInlineDisplay(todo.deadline, todo.isCompleted)}}
-        </span>
+      <mat-list-option 
+        *ngFor="let todo of todos" 
+        checkboxPosition="before" 
+        (click)="onTodoClicked(todo)" 
+        [selected]="todo.isCompleted"
+        [class.in-transition]="todo.inCompletedTransition"
+        [class.is-completed]="todo.inCompletedTransition || todo.isCompleted">
+          {{todo.task}}
+          <span class="task-deadline" 
+            [matTooltip]="formatDateForTooltip(todo.deadline)"
+            matTooltipPosition="above"
+            [matTooltipDisabled]="todo.isCompleted">
+              {{formatDateForInlineDisplay(todo.deadline, todo.isCompleted)}}
+          </span>
       </mat-list-option>
     </mat-selection-list>        
   </div>

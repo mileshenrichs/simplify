@@ -18,21 +18,21 @@ export class TodoSetComponent implements OnInit {
 
   @Output() completedToggled = new EventEmitter();
 
-  ngOnInit() {
-    
-  }
+  @Output() todoCompleted = new EventEmitter<Todo>();
+
+  ngOnInit() { }
 
   onToggleCompleted(event: Event): void {
     this.completedToggled.emit();
   }
 
-  onTodoClicked(event: Event): void {
-    console.log(event);
-    // get info about action
-    // const task = event.target.childNodes[0].data.trim();
-    // console.log('toggling ' + task);
-
-
+  onTodoClicked(todo: Todo): void {
+    const { task } = todo;
+    const todoInList = this.todos.find(t => t.task === task);
+    
+    if(!todoInList.isCompleted) {
+      this.todoCompleted.emit(todo);
+    }
   }
 
   formatDateForTooltip(date: Date): string {

@@ -30,3 +30,22 @@
   right: 14px;
   color: #9f9f9f;
 }
+
+.mat-list-option.in-transition {
+  /* trigger delayed fade-out animation */
+  animation: fadeOutTodo 1s ease-in-out 2s forwards;
+}
+
+.mat-list-option.is-completed {
+  text-decoration: line-through;
+  color: #9f9f9f;
+}
+
+@keyframes fadeOutTodo {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

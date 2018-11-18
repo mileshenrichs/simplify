@@ -3,7 +3,8 @@
     [setTitle]="'Things to do'" 
     [todos]="getActiveTodos()"
     [showCompleted]="showCompleted"
-    (completedToggled)="toggleShowCompleted()">
+    (completedToggled)="toggleShowCompleted()"
+    (todoCompleted)="onTodoCompleted($event)">
   </app-todo-set>
 </div>
 
