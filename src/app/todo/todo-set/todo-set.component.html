@@ -21,7 +21,8 @@
           <span class="task-deadline" 
             [matTooltip]="formatDateForTooltip(todo.deadline)"
             matTooltipPosition="above"
-            [matTooltipDisabled]="todo.isCompleted">
+            [matTooltipDisabled]="todo.isCompleted"
+            [class.task-overdue]="!todo.isCompleted && isOverdue(todo.deadline)">
               {{formatDateForInlineDisplay(todo.deadline, todo.isCompleted)}}
           </span>
       </mat-list-option>

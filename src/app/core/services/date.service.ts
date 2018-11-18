@@ -16,4 +16,20 @@ export class DateService {
     return moment(date).format('MMMM Do');
   }
 
+  formatDateForUncompletedTask(date: Date): string {
+    const now = new moment();
+    const timeUntil = moment.duration(now.diff(moment(date)));
+    const humanizedTimeDiff = timeUntil.humanize()
+
+    if(!this.isOverdue(date)) {
+      return 'in ' + humanizedTimeDiff;
+    } else {
+      return humanizedTimeDiff + ' ago';
+    }
+  }
+
+  isOverdue(date: Date): boolean {
+    return moment(date).isBefore(moment());
+  }
+
 }

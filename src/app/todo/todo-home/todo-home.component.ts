@@ -17,14 +17,14 @@ export class TodoHomeComponent implements OnInit {
   ngOnInit() {
     this.todos = [
       {
-        task: 'Answer two questions on Astonomy Packback',
-        deadline: new Date(2018, 10, 18, 18, 30, 0, 0),
+        task: 'Become a billionaire',
+        deadline: new Date(2018, 7, 1, 6, 0, 0, 0),
         isCompleted: false,
         inCompletedTransition: false
       },
       {
-        task: 'Ask one question on Astonomy Packback',
-        deadline: new Date(2018, 10, 19, 14, 0, 0, 0),
+        task: 'Answer two questions on Astonomy Packback',
+        deadline: new Date(2018, 10, 18, 18, 30, 0, 0),
         isCompleted: false,
         inCompletedTransition: false
       },
@@ -32,6 +32,12 @@ export class TodoHomeComponent implements OnInit {
         task: 'Wake up this morning',
         deadline: new Date(2018, 10, 18, 8, 0, 0, 0),
         isCompleted: true,
+        inCompletedTransition: false
+      },
+      {
+        task: 'Ask one question on Astonomy Packback',
+        deadline: new Date(2018, 10, 19, 14, 0, 0, 0),
+        isCompleted: false,
         inCompletedTransition: false
       },
       {

@@ -41,9 +41,13 @@ export class TodoSetComponent implements OnInit {
 
   formatDateForInlineDisplay(date: Date, isCompleted: boolean): string {
     if(!isCompleted) {
-      return 'tomorrow';
+      return this.dateService.formatDateForUncompletedTask(date);
     } else {
       return this.dateService.formatDateForCompletedTask(date);
     }
+  }
+
+  isOverdue(date: Date): boolean {
+    return this.dateService.isOverdue(date);
   }
 }
