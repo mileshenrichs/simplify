@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 import Todo from 'src/app/core/models/Todo';
+import { DateService } from '../../core/services/date.service';
 
 @Component({
   selector: 'app-todo-set',
@@ -8,7 +10,7 @@ import Todo from 'src/app/core/models/Todo';
 })
 export class TodoSetComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dateService: DateService) { }
 
   @Input() todos: Todo[];
   @Input() setTitle: string;
@@ -24,4 +26,19 @@ export class TodoSetComponent implements OnInit {
     this.completedToggled.emit();
   }
 
+  onTodoClicked(event: Event): void {
+    console.log(event);
+  }
+
+  formatDateForTooltip(date: Date): string {
+    return this.dateService.formatDateForUncompletedPopover(date);
+  }
+
+  formatDateForInlineDisplay(date: Date, isCompleted: boolean): string {
+    if(!isCompleted) {
+      return 'tomorrow';
+    } else {
+      return this.dateService.formatDateForCompletedTask(date);
+    }
+  }
 }

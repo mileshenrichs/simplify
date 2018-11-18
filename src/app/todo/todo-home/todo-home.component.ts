@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Todo } from '../../core/models/Todo';
+import Todo from '../../core/models/Todo';
 
 @Component({
   selector: 'app-todo-home',
@@ -19,28 +19,28 @@ export class TodoHomeComponent implements OnInit {
       {
         task: 'Become an Angular master',
         deadline: new Date(),
-        completed: false
+        isCompleted: false
       },
       {
         task: 'Check in on Juno\'s messed up leg',
         deadline: new Date(),
-        completed: false
+        isCompleted: false
       },
       {
         task: 'Wake up this morning',
         deadline: new Date(),
-        completed: true;
+        isCompleted: true
       }
     ];
-    this.showCompleted = false;
+    this.showCompleted = true;
   }
 
   getActiveTodos(): Todo[] {
-    return this.todos.filter(todo => !todo.completed);
+    return this.todos.filter(todo => !todo.isCompleted);
   }
 
   getCompletedTodos(): Todo[] {
-    return this.todos.filter(todo => todo.completed);
+    return this.todos.filter(todo => todo.isCompleted);
   }
 
   toggleShowCompleted(): void {
