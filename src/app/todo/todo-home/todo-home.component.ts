@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
 
 import Todo from '../../core/models/Todo';
+import { CreateTodoDialogComponent } from '../create-todo-dialog/create-todo-dialog.component';
 
 @Component({
   selector: 'app-todo-home',
@@ -9,7 +11,7 @@ import Todo from '../../core/models/Todo';
 })
 export class TodoHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   todos: Todo[];
   showCompleted: boolean;
@@ -23,7 +25,7 @@ export class TodoHomeComponent implements OnInit {
         inCompletedTransition: false
       },
       {
-        task: 'Answer two questions on Astonomy Packback',
+        task: 'Answer two questions on Astronomy Packback',
         deadline: new Date(2018, 10, 18, 18, 30, 0, 0),
         isCompleted: false,
         inCompletedTransition: false
@@ -35,7 +37,7 @@ export class TodoHomeComponent implements OnInit {
         inCompletedTransition: false
       },
       {
-        task: 'Ask one question on Astonomy Packback',
+        task: 'Ask one question on Astronomy Packback',
         deadline: new Date(2018, 10, 19, 14, 0, 0, 0),
         isCompleted: false,
         inCompletedTransition: false
@@ -78,6 +80,23 @@ export class TodoHomeComponent implements OnInit {
         inCompletedTransition: false
       }
     }, FADEOUT_ANIMATION_DURATION);
+  }
+
+  onAddTodoButtonClick() {
+    console.log('TodoHome.onAddTodoButtonClick()');
+    this.openCreateTodoDialog();
+  }
+
+  openCreateTodoDialog(): void {
+    const dialogRef = this.dialog.open(CreateTodoDialogComponent, {
+      width: '60%',
+      panelClass: 'create-todo-dialog',
+      data: {task: ''}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
   }
 
 }

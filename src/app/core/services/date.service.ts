@@ -17,11 +17,14 @@ export class DateService {
   }
 
   formatDateForUncompletedTask(date: Date): string {
-    const now = new moment();
+    const now = moment();
     const timeUntil = moment.duration(now.diff(moment(date)));
     const humanizedTimeDiff = timeUntil.humanize()
 
     if(!this.isOverdue(date)) {
+      if(humanizedTimeDiff === 'a day') {
+        return 'tomorrow';
+      }
       return 'in ' + humanizedTimeDiff;
     } else {
       return humanizedTimeDiff + ' ago';

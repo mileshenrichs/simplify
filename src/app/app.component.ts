@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { TodoHomeComponent } from './todo/todo-home/todo-home.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'simplify';
+  
+  @ViewChild(TodoHomeComponent)
+  todoHome: TodoHomeComponent;
+
+  onAddTodoButtonClick() {
+    console.log('AppComponent.onAddTodoButtonClick()');
+    this.todoHome.onAddTodoButtonClick();
+  }
+
 }

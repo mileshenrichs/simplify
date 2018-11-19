@@ -12,3 +12,11 @@
 .app-logo img {
   width: 300px;
 }
+
+.add-todo-button {
+  position: absolute;
+  bottom: 38px;
+  right: 48px;
+  font-size: 40px;
+  font-weight: 300;
+}
