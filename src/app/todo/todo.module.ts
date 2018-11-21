@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -19,6 +21,7 @@ import { CreateTodoDialogComponent } from './create-todo-dialog/create-todo-dial
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     MatSlideToggleModule,
     MatListModule,
     MatTooltipModule,

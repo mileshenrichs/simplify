@@ -12,7 +12,6 @@ export class AppComponent {
   todoHome: TodoHomeComponent;
 
   onAddTodoButtonClick() {
-    console.log('AppComponent.onAddTodoButtonClick()');
     this.todoHome.onAddTodoButtonClick();
   }
 

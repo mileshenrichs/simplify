@@ -83,15 +83,13 @@ export class TodoHomeComponent implements OnInit {
   }
 
   onAddTodoButtonClick() {
-    console.log('TodoHome.onAddTodoButtonClick()');
     this.openCreateTodoDialog();
   }
 
   openCreateTodoDialog(): void {
     const dialogRef = this.dialog.open(CreateTodoDialogComponent, {
       width: '60%',
-      panelClass: 'create-todo-dialog',
-      data: {task: ''}
+      panelClass: 'create-todo-dialog'
     });
 
     dialogRef.afterClosed().subscribe(result => {

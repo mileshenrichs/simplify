@@ -1,9 +1,11 @@
 <mat-dialog-content>
-  <mat-form-field class="todo-dialog-form-field">
-    <input matInput color="accent" placeholder="I need to..." [(ngModel)]="data.task">
-  </mat-form-field>
+  <form [formGroup]="form">
+    <mat-form-field class="todo-dialog-form-field">
+      <input matInput color="accent" placeholder="I need to..." formControlName="task">
+    </mat-form-field>
+  </form>
 </mat-dialog-content>
 
 <mat-dialog-actions>
-  <button mat-flat-button color="accent">Create</button>
+  <button mat-flat-button color="accent" (click)="onCreateClick()">Create</button>
 </mat-dialog-actions>
