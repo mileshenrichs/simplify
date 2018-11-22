@@ -21,7 +21,7 @@ export class CreateTodoDialogComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      task: ''
+      task: '' 
     });
 
     this.form.valueChanges.subscribe(console.log);
