@@ -13,7 +13,7 @@ import Todo from 'src/app/core/models/Todo';
 export class CreateTodoDialogComponent implements OnInit {
 
   constructor(
-    private dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+    private dialogRef: MatDialogRef<CreateTodoDialogComponent>,
     private formBuilder: FormBuilder
   ) { }
 

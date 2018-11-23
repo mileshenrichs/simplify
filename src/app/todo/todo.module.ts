@@ -8,6 +8,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule} from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { TodoHomeComponent } from './todo-home/todo-home.component';
 import { TodoSetComponent } from './todo-set/todo-set.component';
@@ -27,7 +28,8 @@ import { CreateTodoDialogComponent } from './create-todo-dialog/create-todo-dial
     MatTooltipModule,
     MatDialogModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDatepickerModule
   ],
   entryComponents: [
     CreateTodoDialogComponent
